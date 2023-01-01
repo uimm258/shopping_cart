@@ -24,8 +24,10 @@ const App = () => {
   return (
     <div>
       <h1>Dummy Shopping List</h1>
-      <Products state={state} dispatch={dispatch} />
-      <Carts state={state} dispatch={dispatch}/>
+      <div style={{ display: "flex" }}>
+        <Products state={state} dispatch={dispatch} />
+        <Carts state={state} dispatch={dispatch}/>
+      </div>
     </div>
   )
 }

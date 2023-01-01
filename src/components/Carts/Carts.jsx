@@ -1,12 +1,13 @@
 import React from "react";
+// import './Carts.css';
 
 const Carts = ({ state, dispatch }) => {
     const { products, cart } = state
 
     return (
-        <>
-            <p>Cart is pending....</p>
-        </>
+        <div className="carts">
+            <h2>Carts</h2>
+        </div>
     )
 }
 
