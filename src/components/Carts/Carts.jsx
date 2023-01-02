@@ -4,8 +4,6 @@ const Carts = ({ state, dispatch }) => {
     const { cart } = state
     const [total, setTotal] = useState("")
 
-    console.log(cart)
-
     return (
         <div style={{
             display: "flex",
