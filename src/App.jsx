@@ -6,7 +6,7 @@ import cartReducer from "./reducers/CartReducer";
 const App = () => {
   const [state, dispatch] = useReducer(cartReducer, {
     products: [],
-    carts: []
+    cart: []
   })
 
   useEffect(() => {
