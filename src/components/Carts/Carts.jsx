@@ -1,8 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Carts = ({ state, dispatch }) => {
     const { cart } = state
     const [total, setTotal] = useState("")
+
+    const handleChangeQrt = (id, qrt) => {
+        dispatch({
+            type: 'CHANGE_QRT',
+            payload: {
+                id, 
+                qrt
+            }
+        })
+    }
+
+    useEffect(() => {
+        setTotal(cart.reduce((accumulator, current) => accumulator + Number(current.price) * current.qrt, 0))
+    }, [cart])
 
     return (
         <div style={{
@@ -48,9 +62,9 @@ const Carts = ({ state, dispatch }) => {
                                         gap: 5
                                     }}
                                 >
-                                    <button> - </button>    
+                                    <button onClick={() => handleChangeQrt(product.id, product.qrt-1)}> - </button>    
                                     <span>{product.qrt}</span>
-                                    <button> + </button>
+                                    <button onClick={() => handleChangeQrt(product.id, product.qrt+1)}> + </button>
                                 </div>
                             </div>
                         )
